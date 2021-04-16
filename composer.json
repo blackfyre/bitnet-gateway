@@ -1,0 +1,53 @@
+{
+    "name": "blackfyre/bitnet-gateway",
+    "description": "Laravel/Lumen Service Provider for BITNET SMS",
+    "keywords": [
+        "blackfyre",
+        "bitnet-gateway"
+    ],
+    "homepage": "https://github.com/blackfyre/bitnet-gateway",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Meki",
+            "email": "gnick666@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "illuminate/support": "^8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Blackfyre\\BitnetGateway\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Blackfyre\\BitnetGateway\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Blackfyre\\BitnetGateway\\BitnetGatewayServiceProvider"
+            ],
+            "aliases": {
+                "BitnetGateway": "Blackfyre\\BitnetGateway\\BitnetGatewayFacade"
+            }
+        }
+    }
+}
