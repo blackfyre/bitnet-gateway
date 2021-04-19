@@ -11,36 +11,19 @@ class BitnetGatewayServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        /*
-         * Optional methods to load your package assets
-         */
-        // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'bitnet-gateway');
-        // $this->loadViewsFrom(__DIR__.'/../resources/views', 'bitnet-gateway');
-        // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
-        // $this->loadRoutesFrom(__DIR__.'/routes.php');
-
         if ($this->app->runningInConsole()) {
+            $configPath = __DIR__ . '/../config/config.php';
+            $configName = 'bitnet-gateway.php';
+
+            if (function_exists('config_path')) {
+                $publishPath = config_path($configName);
+            } else {
+                $publishPath = base_path('config/' . $configName);
+            }
+
             $this->publishes([
-                __DIR__.'/../config/config.php' => config_path('bitnet-gateway.php'),
+                $configPath => $publishPath,
             ], 'config');
-
-            // Publishing the views.
-            /*$this->publishes([
-                __DIR__.'/../resources/views' => resource_path('views/vendor/bitnet-gateway'),
-            ], 'views');*/
-
-            // Publishing assets.
-            /*$this->publishes([
-                __DIR__.'/../resources/assets' => public_path('vendor/bitnet-gateway'),
-            ], 'assets');*/
-
-            // Publishing the translation files.
-            /*$this->publishes([
-                __DIR__.'/../resources/lang' => resource_path('lang/vendor/bitnet-gateway'),
-            ], 'lang');*/
-
-            // Registering package commands.
-            // $this->commands([]);
         }
     }
 
