@@ -1,4 +1,4 @@
-# Very short description of the package
+# BitNet SMS Gateway
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/blackfyre/bitnet-gateway.svg?style=flat-square)](https://packagist.org/packages/blackfyre/bitnet-gateway)
 [![Build Status](https://img.shields.io/travis/blackfyre/bitnet-gateway/master.svg?style=flat-square)](https://travis-ci.org/blackfyre/bitnet-gateway)
