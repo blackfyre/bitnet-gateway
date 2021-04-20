@@ -5,7 +5,7 @@
 [![Quality Score](https://img.shields.io/scrutinizer/g/blackfyre/bitnet-gateway.svg?style=flat-square)](https://scrutinizer-ci.com/g/blackfyre/bitnet-gateway)
 [![Total Downloads](https://img.shields.io/packagist/dt/blackfyre/bitnet-gateway.svg?style=flat-square)](https://packagist.org/packages/blackfyre/bitnet-gateway)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+Laravel/Lumen Service provider for the BitNet SMS Service.
 
 ## Installation
 
@@ -15,10 +15,21 @@ You can install the package via composer:
 composer require blackfyre/bitnet-gateway
 ```
 
-## Usage
+### Lumen
+
+In your `bootstrap/app.php` add the service provider:
 
 ``` php
-// Usage description here
+$app->register(\Blackfyre\BitnetGateway\BitnetGatewayServiceProvider::class);
+```
+
+## Usage
+
+### Lumen
+
+``` php
+$smsId = app('bitnet-gateway')->sendSMS('36#########', 'test');
+$smsStatus = app('bitnet-gateway')->queryStatus($smsId)
 ```
 
 ### Testing
