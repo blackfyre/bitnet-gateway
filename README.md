@@ -23,6 +23,13 @@ In your `bootstrap/app.php` add the service provider:
 $app->register(\Blackfyre\BitnetGateway\BitnetGatewayServiceProvider::class);
 ```
 
+### .env
+
+```
+BITNET_USERNAME=YOUR_BITNET_USER
+BITNET_PASSWORD=YOUR_BITNET_PWD
+```
+
 ## Usage
 
 ### Lumen
