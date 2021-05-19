@@ -81,11 +81,20 @@ class BitnetGateway
             'id' => $messageId
         ];
 
-        $response = json_decode($this->_client->get('status/', [
-            'query' => $query
-        ])->getBody(), true);
+        $response = json_decode(
+            $this->_client->get(
+                'status/', 
+                [
+                    'query' => $query
+                ]
+            )->getBody(), true
+        );
 
-        return $response['messages'][0];
+        if (count($response['messages']) > 0) {
+            return $response['messages'][0];
+        }
+
+        return [];
     }
 
     /**
