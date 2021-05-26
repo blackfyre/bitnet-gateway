@@ -52,7 +52,7 @@ class BitnetGateway
             'password' => config('bitnet-gateway.password'),
             'charset' => config('bitnet-gateway.encoding'),
             'receiver' => $phoneNumber,
-            'text' => urlencode($message),
+            'text' => $message,
             'json' => 1
         ];
 
